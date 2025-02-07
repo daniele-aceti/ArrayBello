@@ -1,10 +1,7 @@
 /*  Scrivete una classe ArrayBello che espone tre metodi:
 add - aggiunge un elemento, se si e' raggiunto il limite di elementi all'interno dell'array lo ridimensiona travasandoci dentro gli elementi
 get - ritorna l'elemento all'n -esima posizione
-print - stampa tutti gli elementi dell'array
-scrivere una classe Sequence che
-ha un costruttore che accetta List<Integer>
-ha un metodo int longestIncreasing() che ritorna la lunghezza della sequenza crescente piu' lunga, es: [1,2,3,4,0,2] -> 4, [1,2,0,3,4] -> 3, [] -> 0, [-4,-3,-1,-1,1,2] ->6 */
+print - stampa tutti gli elementi dell'array */
 
 public class ArrayBello {
 
@@ -25,7 +22,7 @@ public class ArrayBello {
     public int[] add(int index) {
         array = new int[5 + index];
         int contatore = 1;
-        for(int i= 0; i < array.length; i++){
+        for (int i = 0; i < array.length; i++) {
             array[i] = contatore++;
         }
         return array;

@@ -1,3 +1,4 @@
 .vscode/settings.json
 bin/App.class
 bin/ArrayBello.class
+bin/Sequence.class
