@@ -11,7 +11,8 @@ public class App {
         System.out.println("Esercizio 2:");
 
         Sequence sequenza = new Sequence();
-        //sequenza.longestIncreasing();
+       System.out.println(sequenza.longestIncreasing());
+               
 
     }
 }

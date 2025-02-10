@@ -5,21 +5,36 @@ ha un metodo int longestIncreasing() che ritorna la lunghezza della sequenza cre
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 
 public class Sequence {
 
-    List<Integer> newArray = new ArrayList<>(Arrays.asList());
+    private List<Integer> newArray;
 
     public Sequence() {
-        Random number = new Random();
-        for (int index = 0; index <= 5; index++) {
-            int result = number.nextInt(5);
-            newArray.add(result);
-        }
-
+        newArray = new ArrayList<>(Arrays.asList());
         System.out.println(newArray);
 
+    }
+
+    public int longestIncreasing() {
+        int contatore = 1;
+        int count = 1;
+        for (int index = 0; index <= newArray.size(); index++) {
+            if (newArray.size() == count) {
+                return contatore;
+            } else if (newArray.isEmpty()) {
+                contatore = 0;
+            } else if (newArray.get(index) <= newArray.get(count)) {
+                //System.out.println("contatore " + index + " " + count + "contatore: " + contatore + " " + newArray.get(index));
+                contatore++;
+            } else if (newArray.get(index) >= newArray.get(count)) {
+                return contatore;
+            }
+
+            count++;
+        }
+
+        return contatore;
     }
 
 }
