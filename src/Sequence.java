@@ -11,30 +11,28 @@ public class Sequence {
     private List<Integer> newArray;
 
     public Sequence() {
-        newArray = new ArrayList<>(Arrays.asList());
+        newArray = new ArrayList<>(Arrays.asList(1,2,3,4,0,2));
         System.out.println(newArray);
 
     }
 
+
     public int longestIncreasing() {
-        int contatore = 1;
-        int count = 1;
-        for (int index = 0; index <= newArray.size(); index++) {
-            if (newArray.size() == count) {
-                return contatore;
-            } else if (newArray.isEmpty()) {
-                contatore = 0;
-            } else if (newArray.get(index) <= newArray.get(count)) {
-                //System.out.println("contatore " + index + " " + count + "contatore: " + contatore + " " + newArray.get(index));
-                contatore++;
-            } else if (newArray.get(index) >= newArray.get(count)) {
-                return contatore;
+        int last = newArray.get(0);
+        int count = 0;
+        int max = count;
+        for (int index = 0; index < newArray.size(); index++) {
+            int curr = newArray.get(index);
+            if (curr >= last) {
+                count++;
+            } else {
+                count = 1;
+            }
+            if (count > max) {
+                max = count;
             }
 
-            count++;
         }
-
-        return contatore;
+        return max;
     }
-
 }
